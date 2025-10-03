@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+*{
+    font-family: "Inter", sans-serif;
+}
+.count-box{
+    @apply rounded-lg flex flex-col justify-center items-center text-white space-y-4
+}
+body{
+    background-color: #F5F5F5;
+}
