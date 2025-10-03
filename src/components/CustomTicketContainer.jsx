@@ -5,8 +5,10 @@ import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 
 const CustomTicketContainer = ({ data, handleTask }) => {
   const [isAdded, setIsAdded] = useState(false);
+  const [status, setStatus] = useState("open");
   const handleClick = () => {
     setIsAdded(true);
+    setStatus("progress")
   };
 
   return (
@@ -23,20 +25,21 @@ const CustomTicketContainer = ({ data, handleTask }) => {
         </h3>
         <span
           className={` ${
-            data.status === "In-Progress"
+            status !== "open"
               ? "text-[#9C7700] bg-[#F8F3B9]"
               : "text-[#0B5E06] bg-[#B9F8CF]"
           } text-xs lg:text-base rounded-full py-1.5 px-3 flex flex-row items-center`}
         >
           <FontAwesomeIcon
-            className={` ${
-              data.status === "In-Progress"
+            className={`mr-1 ${
+              status !== "open"
                 ? "text-[#FEBB0C]"
                 : "text-[#02A53B]"
             }`}
             icon={faCircle}
           />
-          {data.status}
+          {/* {data.status} */}
+          {status === "open" ? "Open" : "In-Progress" }
         </span>
       </div>
       <p className="text-[#627382] max-w-[600px]">{data.description}</p>

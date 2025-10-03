@@ -20,14 +20,12 @@ const MainSection = ({fetchPromise}) => {
         setStatus(true);
         toast.success('In progress')
         const newTask=[...task,data];
-        setTask(newTask);
-
-       
-        
+        setTask(newTask);       
         
     }
     const handleResolve=(data)=>{
         toast.success('Completed')
+        setStatus(false)
         const newResolved=[...resolved, data]
         setResolved(newResolved)
         const taskRemaining= task.filter(element=>element.id!==data.id)
