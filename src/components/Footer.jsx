@@ -1,5 +1,6 @@
 import { Facebook, Linkedin, Mail, Twitter } from 'lucide-react';
 import React from 'react';
+import { FaFacebook } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
@@ -33,10 +34,10 @@ const Footer = () => {
                     <li>Join Us</li>
                 </ul>
             </div>
-            <div className=" ">
+            <div className="w-[400px] ">
                 <h3 className="text-xl font-medium mb-3">Social Links</h3>
-                <ul className='text-[#A1A1AA] space-y-3'>
-                    <li className='flex gap-2'><Facebook />@CS — Ticket System</li>
+                <ul className='text-[#A1A1AA] space-y-3 text-xs'>
+                    <li className='flex gap-2'><FaFacebook className='text-xl text-white'/>@CS — Ticket System</li>
                     <li className='flex gap-2'><Twitter />@CS — Ticket System</li>
                     <li className='flex gap-2'><Linkedin />@CS — Ticket System</li>
                     <li className='flex gap-2'><Mail />support@cst.com</li>
@@ -45,7 +46,7 @@ const Footer = () => {
 
             
         </div>
-        <div className="text-white text-center mt-20">© 2025 CS — Ticket System. All rights reserved.</div>
+        <div className="text-white text-center mt-20 pt-6 border-t-1 border-t-gray-600">© 2025 CS — Ticket System. All rights reserved.</div>
         </div>
     );
 };

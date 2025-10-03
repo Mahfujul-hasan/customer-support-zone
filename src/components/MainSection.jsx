@@ -11,13 +11,17 @@ const MainSection = ({fetchPromise}) => {
     const[task, setTask]=useState([]);
     const[resolved, setResolved]=useState([]);
 
+    const [status, setStatus] = useState(false);
+
     
 
 
     const handleTask=(data)=>{
+        setStatus(true);
         toast.success('In progress')
         const newTask=[...task,data];
         setTask(newTask);
+
        
         
         
@@ -50,9 +54,10 @@ const MainSection = ({fetchPromise}) => {
                     </div>
                 </div>
                 <div className="lg:col-span-1 mt-2.5 mx-2.5 lg:mx-0">
-                    <div className="">
+                    <div className=" mb-10">
                         <h1 className='text-2xl font-semibold text-[#34485A] mb-2.5'>Task Status</h1>
-                        <div className="min-h-20 bg-white p-2.5 rounded-lg border-2 border-gray-200">
+                        {
+                            status ? <div className="min-h-20  p-2.5 rounded-lg ">
                             {
                                 task.map(item=>{
                                     return(
@@ -63,7 +68,8 @@ const MainSection = ({fetchPromise}) => {
                                     )
                                 })
                             }
-                        </div>
+                        </div> : <p className='text-xs italic text-gray-600'>Please Add A Task from List</p>
+                        }
                     </div>
                     <div className="">
                         <h1 className='text-2xl font-semibold text-[#34485A] mb-2.5 '>Resolved Task</h1>
